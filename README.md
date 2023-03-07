@@ -1,4 +1,4 @@
-# scriabin
+# philips-hue-midi
 
 
 ## Overview
