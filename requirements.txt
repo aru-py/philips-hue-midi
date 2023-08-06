@@ -1,0 +1,8 @@
+mido==1.2.10
+phue==1.1
+python-rtmidi==1.4.9
+
+toml~=0.10.2
+pip~=22.0.4
+wheel~=0.37.1
+setuptools~=60.9.3

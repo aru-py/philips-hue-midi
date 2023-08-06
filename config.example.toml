@@ -1,0 +1,51 @@
+bridge_ip = '192.168.1.14'
+palette = ["2C3D21B", "1212168E", "21D87B8", "91AFD7", "21217AA1"]
+
+[channels.default]
+lights = []
+brightness = { off_min = 0, on_min = 10, entropy = 20, sensitivity = 12 }
+transition = { min = 21 }
+colors = [[0.5881, 0.386], [0.5246, 0.4135]]
+
+# color and bulb 1
+[channels.0]
+lights = [1, 2, 3, 4, 6, 8]
+
+[channels.1]
+lights = [1, 8]
+
+[channels.2]
+lights = [2, 8]
+
+[channels.3]
+lights = [3, 8]
+
+# color and bulb 2
+[channels.4]
+lights = [4, 8]
+
+[channels.5]
+lights = [1, 6]
+
+[channels.6]
+lights = [2, 6]
+
+[channels.7]
+lights = [3, 6]
+
+[channels.8]
+lights = [4, 6]
+
+# two bulbs
+[channels.9]
+lights = [6, 8]
+
+# other
+[channels.10]
+lights = [1, 2]
+
+[channels.11]
+lights = [2, 3]
+
+[channels.12]
+lights = [1, 3]
