@@ -3,11 +3,10 @@
 # Overview
 
 Philips-hue-midi is a program that allows controlling Philips Hue lights using your midi keyboard. It is inspired by the
-perceptual phenomenon of [Synesthesia](https://en.wikipedia.org/wiki/Synesthesia). See it in action below:
+perceptual phenomenon of Synesthesia. See it in action below:
 
-<p align="left">
-  <img src="docs/demo.gif" width="20%">
-</p>
+  <img src="docs/demo.gif" width="300px">
+
 
 # Getting Started
 
