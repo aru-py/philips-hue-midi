@@ -1,7 +1,7 @@
 from typing import List, Union
 
-from core.base_controller import BaseController
-from event import Event
+from ..event import Event
+from ..core.base_controller import BaseController
 
 
 class NoteController(BaseController):

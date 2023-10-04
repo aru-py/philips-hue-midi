@@ -3,7 +3,6 @@ from dataclasses import dataclass
 
 @dataclass
 class Event:
-
     note: int
     type: str
     velocity: int

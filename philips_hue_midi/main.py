@@ -2,27 +2,22 @@
 main.py
 """
 
-import atexit
-
-from constants import LEFT_PEDAL
-from controllers.note_controller import NoteController
-from utils import save_lights_state, create_channels
-
 import asyncio
+import atexit
 import logging
-import time
-from typing import List
-
 import mido
+import time
+from logging import getLogger
 from mido import Message
 from phue import Bridge
+from typing import List
 
-from core.channel import Channel
-from event import Event
-
-from logging import getLogger
-
-from config import config
+from .config import config
+from .constants import LEFT_PEDAL
+from .controllers.note_controller import NoteController
+from .core.channel import Channel
+from .event import Event
+from .utils import save_lights_state, create_channels
 
 logger = getLogger()
 logger.setLevel(logging.DEBUG)

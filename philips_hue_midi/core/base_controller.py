@@ -1,7 +1,7 @@
 from dataclasses import dataclass
 from typing import Any, List, Dict
 
-from src.event import Event
+from ..event import Event
 
 
 @dataclass

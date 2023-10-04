@@ -1,13 +1,22 @@
 import math
+from dataclasses import dataclass
+from phue import Bridge
 from random import random
 from typing import Any, List, Dict
-from dataclasses import dataclass
 
-from phue import Bridge
+from ..constants import NUM_KEYS
+from ..event import Event
 
-from constants import NUM_KEYS
-from event import Event
-from utils import interpolate
+
+def interpolate(p, color_range):
+    """
+    Takes in `color_range`, a pair of tuples and interpolates linearly
+    at the point `p`.
+    """
+    x = (color_range[1][0] - color_range[0][0]) * p + color_range[0][0]
+    y = (color_range[1][1] - color_range[0][1]) * p + color_range[0][1]
+    return x, y
+
 
 @dataclass
 class Channel:
@@ -40,7 +49,7 @@ class Channel:
                 continue
 
             self.bridge.set_light(light_num, {
-                'xy': [*interpolate(((max(40, min(event.note, 80))) - 40)/40, self.colors)],
+                'xy': [*interpolate(((max(40, min(event.note, 80))) - 40) / 40, self.colors)],
                 'bri': round(self.brightness['on_min'] + (random() * self.brightness['entropy']) - self.brightness[
                     'entropy'] / 2 + math.sqrt(event.velocity) * self.brightness['sensitivity']),
                 'transitiontime': max(5, round(-event.velocity / 4 + self.transition['min'])),

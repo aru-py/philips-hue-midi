@@ -1,19 +1,7 @@
 from random import random, choice
 
-from config import Config
+from .config import Config
 
-
-def interpolate(p, color_range):
-    """
-    Takes in `color_range`, a pair of tuples and interpolates linearly
-    at the point `p`.
-    """
-    x = (color_range[1][0] - color_range[0][0]) * p + color_range[0][0]
-    y = (color_range[1][1] - color_range[0][1]) * p + color_range[0][1]
-    return x, y
-
-
-from core.channel import Channel
 
 
 def save_lights_state(bridge):
@@ -29,9 +17,10 @@ def save_lights_state(bridge):
 
 
 # todo move all below
+from .core.channel import Channel
 
 
-from rgbxy import Converter
+from .rgbxy import Converter
 
 converter = Converter()
 

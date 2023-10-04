@@ -1,7 +1,8 @@
 from typing import List
 
-from src.core.base_controller import BaseController
-from src.event import Event
+from ..core.base_controller import BaseController
+from ..event import Event
+
 
 # todo make generic
 class RegisterController(BaseController):
