@@ -1,6 +1,7 @@
 import toml
 from dataclasses import dataclass
 from typing import Dict, Any, List
+import sys
 
 
 @dataclass
@@ -14,5 +15,5 @@ class Config:
     channels: Any
 
 
-with open('config.toml', 'r') as f:
+with open(sys.argv[1], 'r') as f:
     config = Config(**toml.load(f))
