@@ -1,4 +1,8 @@
 - Create better configuration file and way to parse it (config.py)
     - Current config is a bit inaccessible
+- Create a "no configuration" set-up
+  - Use all lights if no config file
+- Use "master channel" instead of "channel.0" (for clarity)
+- Support for both xy and rgb colors everywhere
 - Dockerize application
 - Replace logger.warning(...) with correct syntax

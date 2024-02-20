@@ -1,5 +1,5 @@
 [channels.default]
-colors = [[0.5881, 0.386], [0.5246, 0.4135]] # using xy color space
+colors = [[0.5881, 0.386], [0.5246, 0.4135]] # using xy color space (https://en.wikipedia.org/wiki/CIE_1931_color_space)
 
-[channels.0]
-lights = [1, 2]
+[channels.0] # master channel
+lights = [1, 2] # put number of hue lights to use

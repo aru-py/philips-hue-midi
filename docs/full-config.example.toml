@@ -1,13 +1,30 @@
-bridge_ip = '192.168.1.14'
+bridge_ip = '192.168.1.14' # ip address of bridge (find here: https://discovery.meethue.com)
+palette = ["FFD1BB", "FFAB76", "FF8C42", "E76F51", "D84315"] # generates colors from these hex codes if no colors is specified
 
-[channels.default]
-lights = []
+[channels.default] # sets channel defaults
+lights = [] # lights to use if channel does not specify lights
 brightness = { off_min = 0, on_min = 10, entropy = 20, sensitivity = 12 }
+# brightness.off-min: brightness of light when not activated
+# brightness.on-min: minimum brightness of light when activated
+# brightness.entropy: variation in light brigthness
+# brightness.sensitivity: light brightness sensitivity to key velocity
 transition = { min = 21 }
+# transition.min: in milliseconds, how fast to fade lights in/out
+
+# colors is in the xy color space
+# colors are interpolated based on key pitch
+# first color = lowest pitch, second color = highest pitch
 colors = [[0.5881, 0.386], [0.5246, 0.4135]]
 
+# this is the master channel
+# this is used to turn lights on or off
+# and is the fallback if a channel is not specified
 [channels.0]
 lights = [1, 2, 3, 4, 6, 8]
+
+# specify up to 12 channels below
+# each channel is activated based on pitch class
+# (e.g. C note maps to channel 1, C# to channel 2, B# to channel 12)
 
 [channels.1]
 lights = [1, 8]
