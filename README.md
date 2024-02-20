@@ -1,29 +1,29 @@
 # philips-hue-midi
 
-# Overview
+## Overview
 
-Philips-hue-midi is a program that allows controlling Philips Hue lights using your midi keyboard. It is inspired by the
+Philips-hue-midi allows you to control your Philips Hue lights with your midi keyboard based on key velocity and pitch. It is inspired by the
 perceptual phenomenon of Synesthesia. See it in action below:
 
-  <img src="docs/demo.gif" width="300px">
+  <img src="docs/demo.gif" width="600px">
 
-# Getting Started
+## Getting Started
 
-## What You'll Need
+### What You'll Need
 
 **Hardware**
 
 Philips Hue Lights & Bridge
 A MIDI Keyboard
 
-## Prerequisites
+### Prerequisites
 
 **Hardware**
 
 - Philips Hue Lights & Bridge
 - Midi Keyboard
 
-### Installation & Setup
+#### Installation & Setup
 
 1. **Connect your MIDI Keyboard**: Attach your MIDI keyboard to your computer and ensure it's powered on.
 
@@ -40,7 +40,7 @@ A MIDI Keyboard
    pipenv run python -m philips_hue_midi.main config.toml
    ```
 
-## Technical Details
+### Technical Details
 
 The program listens to MIDI events and sends MIDI events at intervals (defined by SAMPLE_RATE). By default,
 this is sixty times per second. *Controllers* are responsible for taking of list of midi events (of variable size, *M*)
