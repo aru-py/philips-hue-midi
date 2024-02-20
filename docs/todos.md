@@ -1,0 +1,4 @@
+- Create better configuration file and way to parse it (config.py)
+    - Current config is a bit inaccessible
+- Dockerize application
+- Replace logger.warning(...) with correct syntax

@@ -1,4 +1,10 @@
-from typing import List, Dict
+"""
+router.py
+
+NOTE: THIS IS NOT USED
+"""
+
+from typing import List
 
 from ..core.base_controller import BaseController
 from ..event import Event

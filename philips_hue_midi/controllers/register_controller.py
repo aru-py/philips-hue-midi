@@ -1,3 +1,12 @@
+"""
+register_controller.py
+
+NOTE: THIS IS NOT USED
+
+
+"""
+
+
 from typing import List
 
 from ..core.base_controller import BaseController

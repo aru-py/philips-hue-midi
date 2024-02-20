@@ -34,8 +34,9 @@ share/python-wheels/
 .venv
 MANIFEST
 
-# Ide
+# Idea
 .idea
 
 # Configuration
 config.toml
+

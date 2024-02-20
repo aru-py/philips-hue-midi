@@ -7,7 +7,6 @@ perceptual phenomenon of Synesthesia. See it in action below:
 
   <img src="docs/demo.gif" width="300px">
 
-
 # Getting Started
 
 ## What You'll Need
@@ -28,20 +27,33 @@ A MIDI Keyboard
 
 1. **Connect your MIDI Keyboard**: Attach your MIDI keyboard to your computer and ensure it's powered on.
 
-2. **Configure the Bridge IP**: Navigate to the `settings.py` file in the source directory. Replace the placeholder text
-   in the `bridge_ip` field with the actual IP address of your Philips Hue bridge. You can find this by
-   visiting [Philips Hue Discovery](https://discovery.meethue.com/).
+2. **Configuration**: Copy the `config.example.toml` as `config.toml`. Set `lights` under `channels.0` to the list of
+   the light id's you want to control.
 
-3. **Setup Light Mapping**: In the same `settings.py` file, configure `channel_lights_mappings` to suit your
-   preferences. The keys should be set up such that the channels correspond with the exact number of Philips Hue lights
-   you wish to control.
-
-4. **Install Python Dependencies**: Navigate to the root directory of the project in your terminal or command prompt,
-   and install the necessary dependencies using pip:
+3. **Install Python Dependencies**: Navigate to the root directory of the project in your terminal or command prompt and
+   install the necessary dependencies using pip:
    ```
    pip install -r requirements.txt
    ```
 5. **Run the Program**: Execute the following command:
    ```
-   python src/main.py
+   pipenv run python -m philips_hue_midi.main config.toml
    ```
+
+## Technical Details
+
+The program listens to MIDI events and sends MIDI events at intervals (defined by SAMPLE_RATE). By default,
+this is sixty times per second. *Controllers* are responsible for taking of list of midi events (of variable size, *M*)
+and converting them to a list of midi events of size *N*, where *N* is the number of *channels*. These channels are
+defined in the config file and are collections of lights and their configurations.
+
+Currently, the default controller is the `note_controller` which takes in *M* notes and maps to *12* channels, based on
+pitch class. For example, the first channel will be activated if the note `C` is played, the second channel for `C#`,
+and so forth. Therefore, your configuration should have 12 channels.
+
+Note that channel 0 is the master channel and is used for turning lights on or off and is the default fallback channel
+if the controller outputs a channel not configured. All lights should be included in this channel.
+
+
+
+

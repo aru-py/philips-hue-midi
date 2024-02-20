@@ -1,10 +1,10 @@
 import math
-from dataclasses import dataclass
-from phue import Bridge
+from dataclasses import dataclass, field
 from random import random
-from typing import Any, List, Dict
+from typing import List, Dict
 
-from ..constants import NUM_KEYS
+from phue import Bridge
+
 from ..event import Event
 
 
@@ -18,6 +18,15 @@ def interpolate(p, color_range):
     return x, y
 
 
+def get_default_brightness_settings() -> Dict[str, int]:
+    # todo move these to constants file
+    return {"off_min": 0, "on_min": 10, "entropy": 20, "sensitivity": 12}
+
+
+def get_default_transition_settings() -> Dict[str, int]:
+    return {"min": 21}
+
+
 @dataclass
 class Channel:
     """
@@ -27,8 +36,8 @@ class Channel:
     bridge: Bridge
     lights: List
     colors: List
-    brightness: Dict[str, Any]
-    transition: Dict[str, Any]
+    brightness: Dict[str, int] = field(default_factory=get_default_brightness_settings)
+    transition: Dict[str, int] = field(default_factory=get_default_transition_settings)
 
     # maps notes to lights todo fix event queue...?
 

@@ -1,5 +1,6 @@
-# -*- coding: utf-8 -*-
 """
+rgbxy.py
+
 Library for RGB / CIE1931 "x, y" coversion.
 Based on Philips implementation guidance:
 http://www.developers.meethue.com/documentation/color-conversions-rgb-xy
