@@ -7,11 +7,6 @@ name = "pypi"
 mido = "*"
 phue = "*"
 python-rtmidi = "*"
-toml = "*"
-build = "*"
-twine = "*"
-pip = "*"
-ninja = "*"
 
 [dev-packages]
 
