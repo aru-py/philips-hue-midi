@@ -19,15 +19,14 @@ perceptual phenomenon of Synesthesia. See it in action below:
 1. **Connect your MIDI Keyboard**: Attach your MIDI keyboard to your computer and ensure it's powered on.
 
 2. **Configuration**: Copy the `config.example.toml` as `config.toml`. Set `lights` under `channels.0` (master channel)
-   to the list of
-   Philips Hue Lights you want to control.
+   to the list of Philips Hue Lights you want to control.
    See [full-config.example.toml](https://github.com/aru-py/philips-hue-midi/blob/main/docs/full-config.example.toml)
    for a full list of configuration options.
 
 3. **Run Program**: Navigate to project root and install the necessary dependencies
-   using uv:
+   using [uv](https://github.com/astral-sh/uv):
    ```
-   uv run python main.py config.toml
+   uvx philips-hue-midi [config.toml]
    ```
 
 ### Technical Details
