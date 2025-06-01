@@ -15,3 +15,6 @@ dependencies = [
     "requests>=2.32.3",
     "rich>=14.0.0",
 ]
+
+[project.scripts]
+run="philips_hue_midi:main"
