@@ -1,6 +1,6 @@
 [project]
 name = "philips-hue-midi"
-version = "2.0.0"
+version = "2.1.0"
 description = "A program that allows controlling Philips Hue lights using a midi keyboard."
 authors = [
     { name = "Aru", email = "arunorth@gmail.com" }
