@@ -14,7 +14,9 @@ class NoteController(BaseController):
     """
 
     @classmethod
-    def __call__(cls, events: List[Union[None, Event]], **kwargs) -> List[Union[None, Event]]:
+    def __call__(
+        cls, events: List[Union[None, Event]], **kwargs
+    ) -> List[Union[None, Event]]:
         res = [None] * 12
         for event in sorted(filter(None, events), key=lambda e: e.note):
             # returns 0 - 11 (representing the pitch class of note)

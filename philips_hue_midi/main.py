@@ -43,10 +43,7 @@ atexit.register(restore_lights)
 channels = create_channels(bridge, config)
 
 # turn on lights for master channel
-bridge.set_light(channels[0].lights, {
-    'on': True,
-    'bri': 1
-})
+bridge.set_light(channels[0].lights, {"on": True, "bri": 1})
 
 # start timer
 running = True
@@ -60,15 +57,15 @@ def add_to_queue(event: Message):
     # todo support control changes
 
     global running
-    if event.type == 'control_change':
+    if event.type == "control_change":
         if event.control == LEFT_PEDAL and event.value == 127:  # todo max
             running = not running
             if not running:
-                bridge.set_light(channels[0].lights, 'on', False)
+                bridge.set_light(channels[0].lights, "on", False)
             else:
                 for light_num in channels[0].lights:
-                    bridge.set_light(light_num, 'on', True)
-                    time.sleep(.1)
+                    bridge.set_light(light_num, "on", True)
+                    time.sleep(0.1)
         return
 
     event = Event(note=event.note, velocity=event.velocity, type=event.type)
@@ -131,5 +128,5 @@ port = mido.open_input()
 logger.warning(f"Connected to midi input {port.name}")
 port.callback = add_to_queue
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     asyncio.run(main())

@@ -1,6 +1,6 @@
-def main():
-    print("Hello from philips-hue-midi!")
+import asyncio
 
+from philips_hue_midi import main
 
 if __name__ == "__main__":
-    main()
+    asyncio.run(main())
