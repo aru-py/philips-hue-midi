@@ -48,4 +48,4 @@ if the controller outputs a channel not configured. All lights you wish to contr
 
 You may have to set the `MIDO_DEFAULT_INPUT` environment variable to the name of your MIDI device if the correct
 midi device is not automatically detected. You can find the name of your MIDI device by running:
-```bash uv run mido-ports`.
+`bash uv run mido-ports`.
