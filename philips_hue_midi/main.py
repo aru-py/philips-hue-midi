@@ -114,6 +114,7 @@ async def event_loop(key_down_events, key_up_events):
 
 
 async def main():
+    print("Starting program!")
     global key_down_events, key_up_events
     while True:
         time.sleep(constants.SAMPLE_RATE / 1000)

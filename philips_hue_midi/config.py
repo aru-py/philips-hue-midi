@@ -9,6 +9,7 @@ import tomllib
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any, List
+from rich import print
 
 import requests
 
@@ -26,6 +27,8 @@ def default_bridge_ip():
         raise Exception(
             "Could not get bridge ip dynamically. Try setting it in your config file manually."
         )
+
+    print(f"Using bridge ip: {bridge_ip}")
     return bridge_ip
 
 
