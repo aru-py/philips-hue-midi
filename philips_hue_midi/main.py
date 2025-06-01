@@ -123,6 +123,8 @@ async def main():
         key_down_events = []
         key_up_events = []
 
+def run():
+    asyncio.run(main())
 
 # connect to keyboard
 port = mido.open_input()
@@ -130,4 +132,4 @@ logger.warning(f"Connected to midi input {port.name}")
 port.callback = add_to_queue
 
 if __name__ == "__main__":
-    asyncio.run(main())
+    run()
